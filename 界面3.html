@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>人机对战</title>
+<style type="text/css">
+*{
+  margin:0;
+  padding:0;
+}
+  .box a{
+    font-size: 20px;
+      font-family: 黑体;
+      color:rgb(8, 0, 0);
+      position:absolute;
+      bottom:20px;
+      right:-150px;
+  }
+  .box b{
+      font-size: 20px;
+      font-family: 黑体;
+      color:rgb(8, 0, 0);
+      position:absolute;
+      top:20px;
+      right:-150px;
+  }
+  .box e{
+      font-size: 20px;
+      font-family: 黑体;
+      color:rgb(8, 0, 0);
+      position:absolute;
+      top:100px;
+      right:-150px;
+  }
+  .box{
+    color:rgb(8, 0, 0);
+      position:relative;
+      width:450px;
+      height:250px;
+  }
+  </style>
+  <script type="text/javascript">
+  var round1;
+  var round2;
+    function opennow1(){
+      round1=Math.ceil(Math.random()*5+1);
+      var c = document.getElementById('dv1');
+      c.innerHTML=round1;
+    }
+
+    function opennow2(){
+      round2=Math.ceil(Math.random()*5+1);
+      var d = document.getElementById('dv2');
+      d.innerHTML=round2;
+    }
+
+    function opennow3(){
+      if(round1>round2){
+        alert('玩家1胜');
+      }
+      if(round1<round2){
+        alert('玩家2胜');
+      }
+      if(round1==round2){
+        alert('平局');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="box">
+    <img src="色子.jpeg" alt="Google Chrome" width="450" height="250" style="float:left">
+    <a>玩家1分数:<c id='dv1'></c></a>
+    <b>玩家2分数:<d id='dv2'></d></b>
+  </div>
+  <br>
+  <input name="点击我" type="button" value="返回" style="width:200px;height:80px" onclick="javascript:document.location.href='界面1.html';" /> 
+  <input name="点击我" type="button" value="玩家1开始" style="width:200px;height:80px" onclick="opennow1();" /> 
+  <input name="点击我" type="button" value="玩家2开始" style="width:200px;height:80px" onclick="opennow2();" /> 
+  <input name="点击我" type="button" value="比较" style="width:200px;height:80px" onclick="opennow3();" />
+</body>
+</html>
